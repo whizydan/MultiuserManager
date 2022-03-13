@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+    <!--these items will be always visible
+        on the Bottom navigation bar-->
+
+    <!--these items will be under the more
+        button of the Bottom navigation bar-->
+    <item
+        android:icon="@drawable/more"
+        android:title=""
+        app:showAsAction="always">
+
+        <menu>
+            <item
+                android:id="@+id/Settings"
+                android:icon="@drawable/ic_baseline_settings_24"
+                android:title="Settings"
+                app:showAsAction="ifRoom" />
+
+            <item
+                android:id="@+id/Help"
+                android:icon="@drawable/ic_baseline_help_outline_24"
+                android:title="Help"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/Share"
+                android:icon="@drawable/ic_baseline_share_24"
+                android:title="Share"
+                app:showAsAction="withText" />
+            <item
+                android:id="@+id/About"
+                android:icon="@drawable/ic_baseline_info_24"
+                android:title="Exit"
+                app:showAsAction="ifRoom" />
+
+        </menu>
+
+    </item>
+
+</menu>
