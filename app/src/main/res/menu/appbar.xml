@@ -17,16 +17,11 @@
 
         <menu>
             <item
-                android:id="@+id/Settings"
-                android:icon="@drawable/ic_baseline_settings_24"
-                android:title="Settings"
+                android:id="@+id/Github"
+                android:icon="@mipmap/git"
+                android:title="Github"
                 app:showAsAction="ifRoom" />
 
-            <item
-                android:id="@+id/Help"
-                android:icon="@drawable/ic_baseline_help_outline_24"
-                android:title="Help"
-                app:showAsAction="ifRoom" />
             <item
                 android:id="@+id/Share"
                 android:icon="@drawable/ic_baseline_share_24"

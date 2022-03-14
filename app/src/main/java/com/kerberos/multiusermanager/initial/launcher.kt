@@ -6,10 +6,12 @@ import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.airbnb.lottie.LottieAnimationView
 import com.kerberos.multiusermanager.MainActivity
 import com.kerberos.multiusermanager.R
 import com.stericson.RootTools.RootTools
@@ -21,14 +23,20 @@ class launcher : AppCompatActivity() {
         setContentView(R.layout.activity_launcher)
 
         val git = findViewById<TextView>(R.id.git)
+        val view = findViewById<LottieAnimationView>(R.id.view)
         val chkroot = findViewById<Button>(R.id.chkroot)
 
         git.setOnClickListener {
             val openurl= Intent(Intent.ACTION_VIEW)
-            openurl.data= Uri.parse("https://github.com/whizydan")
+            openurl.data= Uri.parse("https://github.com/whizydan/MultiuserManager")
             startActivity(openurl)
         }
 
+        view.setOnClickListener{
+            val openurl= Intent(Intent.ACTION_VIEW)
+            openurl.data= Uri.parse("https://github.com/whizydan/MultiuserManager")
+            startActivity(openurl)
+        }
 
         chkroot.setOnClickListener {
             if(RootTools.isAccessGiven() == false){

@@ -8,6 +8,7 @@
       <map>
         <entry key="..\:/Android/MultiuserManager/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.10208333333333333" />
         <entry key="..\:/Android/MultiuserManager/app/src/main/res/drawable/more.xml" value="0.2078125" />
+        <entry key="..\:/Android/MultiuserManager/app/src/main/res/layout/activity_launcher.xml" value="0.5" />
         <entry key="..\:/Android/MultiuserManager/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Android/MultiuserManager/app/src/main/res/layout/activity_update.xml" value="0.1" />
         <entry key="..\:/Android/MultiuserManager/app/src/main/res/layout/custom_list.xml" value="0.25" />

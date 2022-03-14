@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.text.InputType
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     private val m_Text = ""
     @SuppressLint("ResourceType")
     @RequiresApi(Build.VERSION_CODES.N)
+    var isAllFabsVisible: Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //copy userList to internal storage
@@ -43,21 +45,33 @@ class MainActivity : AppCompatActivity() {
         val adduser = findViewById<FloatingActionButton>(R.id.adduser)
         val remuser = findViewById<FloatingActionButton>(R.id.remuser)
 
+        fab.setOnClickListener() {
+            if (isAllFabsVisible == false) {
+                isAllFabsVisible = true
+                adduser.visibility = FloatingActionButton.VISIBLE
+                remuser.visibility = FloatingActionButton.VISIBLE
+            } else {
+                isAllFabsVisible = false
+                adduser.visibility = FloatingActionButton.GONE
+                remuser.visibility = FloatingActionButton.GONE
+
+            }
+        }
 
 
         appbar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.Settings -> {
-                    true
-                }
-                R.id.Help -> {
+                R.id.Github -> {
+                    val openurl= Intent(Intent.ACTION_VIEW)
+                    openurl.data= Uri.parse("https://github.com/whizydan/MultiuserManager")
+                    startActivity(openurl)
                     true
                 }
                 R.id.Share -> {
                     val sendIntent: Intent = Intent().apply {
                         action = Intent.ACTION_SEND
                         putExtra(Intent.EXTRA_TEXT, "Switch easily between profiles with this amazing app." +
-                                "get it at https://github.com/whizydan/multiusermanager")
+                                "get it at https://github.com/whizydan/MultiuserManager")
                         type = "text/plain"
                     }
 
@@ -125,15 +139,6 @@ class MainActivity : AppCompatActivity() {
             val element = parent.getItemIdAtPosition(position)
             val user_id = users[element.toInt()]
             switchUser(user_id.toString())
-        }
-
-        fab.setOnClickListener {
-            val badAbiDialog = MaterialAlertDialogBuilder(this)
-                .setTitle("Test")
-                .setMessage(list.toString())
-                .setPositiveButton("Cancel", null)
-            badAbiDialog.show()
-
         }
 
         adduser.setOnClickListener {

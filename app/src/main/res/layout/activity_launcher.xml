@@ -41,12 +41,24 @@ at your own risk.
         android:id="@+id/git"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginEnd="193dp"
         android:layout_marginBottom="16dp"
         android:text="check out the project on github"
         android:textColor="#F06292"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/view"
+        android:layout_width="89dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="11dp"
+        android:paddingEnd="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/git"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/github" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
